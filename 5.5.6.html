@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+     <title>Sumador aleatorio</title>
+     <script type="text/javascript" charset="utf-8">
+       function sumar(){
+         var numero = document.getElementById('sentence');
+         var resul = numero.innerHTML.split("+");
+         var resultado = document.getElementById("resultado");
+         var aux = parseInt(resul[0]) + parseInt(resul[1]);
+         resultado.innerHTML = "= " + aux;
+       }
+     </script>
+   </head>
+   <body>
+     <p>SUMA: <span id="sentence"></span> <span id="resultado"></span></p>
+     <p id="another"><a href="javascript:document.location.reload()">Suma aleatoria</a></p>
+     <script type="text/javascript" charset="utf-8">
+     (function aleatorio(){
+       var numeros = document.getElementById("sentence");
+       numeros.innerHTML = Math.floor(Math.random() * 1000) + "+" + Math.floor(Math.random() * 1000);
+       sumar();
+     }());
+     </script>
+   </body>
+</html>
